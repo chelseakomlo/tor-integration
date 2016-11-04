@@ -16,6 +16,13 @@ RUN apt-get install -y libssl-dev
 RUN git clone https://git.torproject.org/chutney.git
 RUN git clone https://git.torproject.org/stem.git
 
+RUN useradd -ms /bin/bash integ-tester
+
+RUN chown -R integ-tester /stem
+RUN chown -R integ-tester /chutney
+
+USER integ-tester
+
 ENV STEM_SOURCE_DIR=/stem
 ENV CHUTNEY_PATH=/chutney
 
