@@ -9,6 +9,7 @@ RUN apt-get install -y pyflakes
 RUN apt-get install -y git
 RUN apt-get install -y make
 RUN apt-get install -y automake
+RUN apt-get install -y tor
 RUN apt-get install -y gcc
 RUN apt-get install -y libevent-dev
 RUN apt-get install -y libssl-dev
