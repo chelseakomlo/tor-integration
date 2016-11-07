@@ -9,6 +9,7 @@ RUN apt-get install -y pyflakes
 RUN apt-get install -y git
 RUN apt-get install -y make
 RUN apt-get install -y automake
+RUN apt-get install -y tor
 RUN apt-get install -y gcc
 RUN apt-get install -y libevent-dev
 RUN apt-get install -y libssl-dev
@@ -16,6 +17,12 @@ RUN apt-get install -y libssl-dev
 RUN git clone https://git.torproject.org/chutney.git
 RUN git clone https://git.torproject.org/stem.git
 RUN git clone https://git.torproject.org/tor.git
+
+RUN useradd -ms /bin/bash integ-tester
+
+RUN chown -R integ-tester /stem
+RUN chown -R integ-tester /chutney
+RUN chown -R integ-tester /tor
 
 ENV STEM_SOURCE_DIR=/stem
 ENV CHUTNEY_PATH=/chutney
