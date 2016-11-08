@@ -1,7 +1,6 @@
 # Running Tor integration tests in a docker container
 
-This is useful for CI purposes as well as consistent setup/teardown in local
-environments.
+This is useful for running Tor integration tests in a Jenkins build task.
 
 ## To build
 ```
